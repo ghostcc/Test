@@ -7,21 +7,20 @@
 <body>
 <div id="test">ssdsdf</div>
 <div id="btn">btn</div>
-<script src="js/jquery-1.11.3.js">
-    $(function () {
-        function m(event) {
-            $(this).append(" " + event.type + " " + event.currentTarget + "<br/>");
-        }
+<script src="js/jquery-1.11.3.js"></script>
+<script >$(function () {
+    function m(event) {
+        $(this).append(" " + event.type + " " + event.currentTarget + "<br/>");
+    }
 
-        $("#test").mousedown(m);
-        $("body").mousedown(m);
-        $("body").mouseup(m);
-        $("body").mouseleave(m);
-        $("#btn").mousedown(function () {
-            $("#test").unbind("mousedown", m)
-        })
-
+    $("#test").mousedown(m);
+    $("body").mousedown(m);
+    $("body").mouseup(m);
+    $("body").mouseleave(m);
+    $("#btn").mousedown(function () {
+        $("#test").unbind("mousedown", m)
     })
-</script>
+
+})</script>
 </body>
 </html>
