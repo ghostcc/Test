@@ -5,20 +5,36 @@
     <title>Title</title>
 </head>
 <body style="background: #cccccc">
-<div id="test" style="background: #ccc;width: 400px;height: 500px">离开框k</div>
+<div id="debug" >离开框k</div>
+<div id="test" style="background: #c00;width: 200px;height: 200px">aaaa</div>
 <div id="btn">btn</div>
 <script src="js/jquery-1.11.3.js"></script>
 <script >$(function () {
     function m(event) {
-        $("#test").append(" " + event.type + " " + event.currentTarget + "<br/>");
+        $("#debug").append(" " + event.type + " " + event.currentTarget + "<br/>");
     }
 
-    $("#test").mousedown(m);
-    $("body").mousedown(m);
-    $("body").mouseup(m);
-    $("body").mouseleave(m);
+    function bind($div){
+        $div.mousedown(m);
+        $div.mouseup(m);
+
+        $div.mouseleave(m);
+        $div.mouseenter(m);
+
+        $div.mousemove(m);
+
+        $div.mouseover(m);
+        $div.mouseout(m);
+
+        $div.bind("touchstart touchmove touchend",m);
+    }
+
+
+
+
+
     $("#btn").mousedown(function () {
-        $("#test").unbind("mousedown", m)
+        $("#debug").append("<br/>")
     })
 
 })</script>
