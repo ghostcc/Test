@@ -21,7 +21,9 @@
             $("#debug").prepend(str);
         } else {
             lastCount++
-            $("#debug").prepend(".")
+            if (lastCount % 10 == 0) {
+                $("#debug").prepend(".");
+            }
         }
         last = str;
     }
