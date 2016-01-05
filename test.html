@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test">ssdsdf</div>
+<div id="btn">btn</div>
+<script src="js/jquery-1.11.3.js">
+    $(function () {
+        function m(event) {
+            $(this).append(" " + event.type + " " + event.currentTarget + "<br/>");
+        }
+
+        $("#test").mousedown(m);
+        $("body").mousedown(m);
+        $("body").mouseup(m);
+        $("body").mouseleave(m);
+        $("#btn").mousedown(function () {
+            $("#test").unbind("mousedown", m)
+        })
+
+    })
+</script>
+</body>
+</html>
