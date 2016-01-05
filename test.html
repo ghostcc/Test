@@ -40,6 +40,9 @@
         $div.mouseover(m);
         $div.mouseout(m);
 
+        $div.scroll(m);
+        $div.scroll(function(event){event.preventDefault()});;
+
         $div.bind("touchstart touchmove touchend", m);
     }
 
