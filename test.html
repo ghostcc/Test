@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body style="background: #cccccc">
-<div id="debug" style="height: 200px;overflow: hidden;">离开框k</div>
+<div id="debug" style="position:fixed;height: 200px;overflow: hidden;">test</div>
 <div id="test" style="background: #c00;width: 200px;height: 200px">aaaa</div>
 
 <div id="btn">btn</div>
@@ -28,6 +28,7 @@
         last = str;
     }
 
+
     function bind($div) {
         $div.mousedown(m);
         $div.mouseup(m);
@@ -41,14 +42,14 @@
         $div.mouseout(m);
 
         $div.scroll(m);
-        $div.scroll(function(event){event.preventDefault()});;
 
         $div.bind("touchstart touchmove touchend", m);
     }
 
 
-    bind($('body'));
     bind($('test'));
+
+    $('body').scroll(function(event){event.preventDefault()});
 
 
     $("#btn").mousedown(function () {
