@@ -51,6 +51,7 @@
 
     $('body').scroll(function(event){event.preventDefault()});
 
+    $('body').bind('touchstart', function(event){event.preventDefault()});
 
     $("#btn").mousedown(function () {
         $("#debug").append("<br/>")
